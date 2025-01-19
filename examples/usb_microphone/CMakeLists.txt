@@ -7,6 +7,8 @@ add_executable(usb_microphone
     usb_microphone.c
 )
 
+pico_generate_pio_header(usb_microphone ${CMAKE_CURRENT_LIST_DIR}/apdm.pio)
+
 target_include_directories(usb_microphone PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
 target_link_libraries(usb_microphone PRIVATE tinyusb_device tinyusb_board pico_pdm_microphone)
